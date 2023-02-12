@@ -3,8 +3,8 @@ package ru.psu;
 import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) {
-//        GridGenerator gridGenerator = new GridGenerator(100, 0.52);
+    public static void main(String[] args) throws IOException {
+//        GridGenerator gridGenerator = new GridGenerator(100, 0.59);
 //        Integer[][] grid = gridGenerator.generate();
 //
 //        // find count of ones
@@ -27,17 +27,14 @@ public class Main {
 //        if (isPercolation) {
 //            System.out.println("Percolation cluster: " + percolationFinder.getClusterNumber());
 //        }
-//        FileGridWriter fileGridWriter = new FileGridWriter("grid.txt", grid);
-//        try {
-//            fileGridWriter.write();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
+//
+//        FileGridReaderWriter fileGridReaderWriter = new FileGridReaderWriter("grid.txt", grid);
+//        fileGridReaderWriter.write();
 
-        int repeatCount = 500;
-        int size = 50;
+        int repeatCount = 100;
+        int size = 1000;
 
-        for (double concentration = 0.5; concentration <= 0.6; concentration += 0.01) {
+        for (double concentration = 0.5; concentration <= 0.61; concentration += 0.01) {
             int count = 0;
             for (int repeat = 0; repeat < repeatCount; repeat++) {
                 GridGenerator gridGenerator = new GridGenerator(size, concentration);
