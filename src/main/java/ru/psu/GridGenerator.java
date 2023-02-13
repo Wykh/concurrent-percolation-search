@@ -19,16 +19,24 @@ public class GridGenerator {
             }
         }
 
-        int countToFill = (int) (size * size * concentration);
-        int countFilled = 0;
-        while (countFilled < countToFill) {
-            int x = (int) (Math.random() * size);
-            int y = (int) (Math.random() * size);
-            if (grid[x][y] == 0) {
-                grid[x][y] = 1;
-                countFilled++;
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                if (Math.random() < concentration) {
+                    grid[i][j] = 1;
+                }
             }
         }
+
+//        int countToFill = (int) (size * size * concentration);
+//        int countFilled = 0;
+//        while (countFilled < countToFill) {
+//            int x = (int) (Math.random() * size);
+//            int y = (int) (Math.random() * size);
+//            if (grid[x][y] == 0) {
+//                grid[x][y] = 1;
+//                countFilled++;
+//            }
+//        }
         return grid;
     }
 }
